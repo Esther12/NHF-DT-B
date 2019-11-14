@@ -10,9 +10,9 @@ require("dotenv").config();
 app.use(express.urlencoded({ extender: true }));
 app.use(express.json());
 //Serve up static assets for heroku
-if (process.env.NODE_ENV === "priducton") {
-  app.use(express.sataus("client/build"));
-}
+//if (process.env.NODE_ENV === "priducton") {
+app.use(express.static("client/build"));
+//}
 //Add endpoints
 app.use(routes);
 //Connect to the Mongo DB
